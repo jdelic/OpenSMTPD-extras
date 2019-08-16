@@ -1590,6 +1590,8 @@ AC_CONFIG_FILES([Makefile
 		extras/tables/table-socketmap/Makefile
 		extras/tables/table-sqlite/Makefile
 		extras/tables/table-stub/Makefile
+
+        extras/filters/filter-stub/Makefile
 		])
 
 #l4761
