@@ -1,5 +1,5 @@
 SUBDIRS =
 
 if HAVE_FILTER_STUB
-SUBDIRS+=    filter-stub
+SUBDIRS+=	filter-stub
 endif
