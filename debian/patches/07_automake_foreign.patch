@@ -1,0 +1,16 @@
+Description: Add "foreign" option to AM_INIT_AUTOMAKE, to fix autoreconf
+Author: Adrian Bunk <bunk@debian.org>
+
+Index: opensmtpd-extras/configure.ac
+===================================================================
+--- opensmtpd-extras.orig/configure.ac
++++ opensmtpd-extras/configure.ac
+@@ -42,7 +42,7 @@ AC_PATH_PROG([GROFF], [groff])
+ AC_PATH_PROG([NROFF], [nroff])
+ AC_PATH_PROG([MANDOC], [mandoc])
+ 
+-AM_INIT_AUTOMAKE([subdir-objects no-dependencies])
++AM_INIT_AUTOMAKE([subdir-objects no-dependencies foreign])
+ 
+ LT_INIT
+ 

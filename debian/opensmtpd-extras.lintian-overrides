@@ -1,0 +1,2 @@
+opensmtpd-extras: capitalization-error-in-description mysql MySQL
+opensmtpd-extras: depends-on-mail-transport-agent-without-alternatives opensmtpd

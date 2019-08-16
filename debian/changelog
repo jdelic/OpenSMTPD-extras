@@ -1,0 +1,65 @@
+opensmtpd-extras (6.4.2p1-0~c6a1590) unstable; urgency=medium
+
+  * Update code from upstream
+  * build new filter api
+
+ -- Jonas Maurus <jm>  Fri, 16 Aug 2019 14:41:00 +0200
+
+opensmtpd-extras (5.7.1-4) unstable; urgency=medium
+
+  * Don't include leading slash in install files
+  * Set branch to debian/sid in Vcs-Git
+  * Bump standards version to 4.1.3
+  * Update Vcs-* to point to salsa
+  * Drop opensmtpd-extras-experimental: filters are currently broken due to an
+    API mismatch with the current version of opensmtpd (Closes: #873731)
+  * Dropping filters also means we don't need libssl1.0-dev (Closes: #859545)
+  * Change priority from extra to optional
+  * Update watch file to connect over https
+  * Override depends-on-mail-transport-agent-without-alternatives: we
+    legitimately need opensmtpd
+  * Turn on hardening
+
+ -- Ryan Kavanagh <rak@debian.org>  Sun, 25 Mar 2018 18:39:37 -0400
+
+opensmtpd-extras (5.7.1-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Switch to debhelper compat 10, autoreconf fixes building with
+    other automake versions. (Closes: #866994)
+  * Add "foreign" option to AM_INIT_AUTOMAKE, to fix autoreconf.
+
+ -- Adrian Bunk <bunk@debian.org>  Mon, 31 Jul 2017 10:55:05 +0300
+
+opensmtpd-extras (5.7.1-3) unstable; urgency=medium
+
+  [ Ryan Kavanagh ]
+  * Fix typo in bug number in changelog
+  * Split experimental filters into an -experimental package. Warn users of
+    the split via a NEWS file.
+  * Force OpenSSL version to be 1.0.x (Closes: #828474)
+  * Transition from libmysqlclient-dev to default-libmysqlclient-dev
+  * Bump standards version to 3.9.8
+  * Fix typo in filter_api.c, 06_filter_api_typo.diff
+
+  [ Jonas Maurus ]
+  * Fix segfault in table_postgres if connections suddenly close and
+    PQresultErrorField returns NULL. 05_TABLE_POSTGRES.diff
+
+ -- Ryan Kavanagh <rak@debian.org>  Thu, 24 Nov 2016 20:01:58 -0500
+
+opensmtpd-extras (5.7.1-2) unstable; urgency=medium
+
+  * Don't ignore --with-privsep-path configure option, 03_PATH_CHROOT.diff
+    (Closes: #812537)
+  * Bump Standards-Version to 3.9.7
+  * Fix typo in filter-pause(8), 04_manpage_typo.diff
+  * Transition Vcs-Git URL from git:// to https://
+
+ -- Ryan Kavanagh <rak@debian.org>  Sat, 20 Feb 2016 17:22:29 -0500
+
+opensmtpd-extras (5.7.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #803688)
+
+ -- Ryan Kavanagh <rak@debian.org>  Sun, 01 Nov 2015 21:03:14 -0500

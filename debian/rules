@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+            --with-mantype=man \
+            --with-privsep-path=/var/lib/opensmtpd/empty \
+            --with-privsep-user=opensmtpd \
+	    --without-openssl-header-check \
+	    --with-table-ldap \
+	    --with-table-mysql \
+	    --with-table-postgres \
+	    --with-table-redis \
+	    --with-table-socketmap \
+	    --with-table-passwd \
+	    --with-table-sqlite

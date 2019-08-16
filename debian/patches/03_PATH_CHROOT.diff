@@ -1,0 +1,24 @@
+Description: Don't ignore the --with-privsep-path configure option
+ Was causing filters to crash at startup: they were trying to chroot into a
+ non-existent default directory, instead of the one we specified with the
+ aforementioned option.
+Author: Ryan Kavanagh <rak@debian.org>
+Bug: https://github.com/OpenSMTPD/OpenSMTPD/issues/659
+Bug-Debian: https://bugs.debian.org/812537
+Forwarded: not-needed, https://github.com/OpenSMTPD/OpenSMTPD/issues/659
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+Index: opensmtpd-extras/api/smtpd-defines.h
+===================================================================
+--- opensmtpd-extras.orig/api/smtpd-defines.h
++++ opensmtpd-extras/api/smtpd-defines.h
+@@ -62,7 +62,9 @@ enum smtp_proc_type {
+ #define SMTPD_MAXDOMAINPARTSIZE	 (255 + 1)
+ 
+ #define SMTPD_USER		"_smtpd"
++#ifndef PATH_CHROOT
+ #define PATH_CHROOT		"/var/empty"
++#endif
+ #define SMTPD_QUEUE_USER	 "_smtpq"
+ #define PATH_SPOOL		"/var/spool/smtpd"
+ 
