@@ -6,6 +6,7 @@ Build-Depends: debhelper (>= 10)
  , autoconf
  , automake
  , libmariadb-dev
+ , libmariadb-dev-compat
  , libasr-dev
  , libevent-dev
  , libhiredis-dev
