@@ -5,7 +5,7 @@ Maintainer: Ryan Kavanagh <rak@debian.org>
 Build-Depends: debhelper (>= 10)
  , autoconf
  , automake
- , default-libmysqlclient-dev
+ , libmariadb-dev
  , libasr-dev
  , libevent-dev
  , libhiredis-dev
