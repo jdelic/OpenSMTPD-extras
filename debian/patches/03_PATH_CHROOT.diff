@@ -8,10 +8,10 @@ Bug-Debian: https://bugs.debian.org/812537
 Forwarded: not-needed, https://github.com/OpenSMTPD/OpenSMTPD/issues/659
 ---
 This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
-Index: opensmtpd-extras/api/smtpd-defines.h
+Index: opensmtpd-extras-6.6.0pre/api/smtpd-defines.h
 ===================================================================
---- opensmtpd-extras.orig/api/smtpd-defines.h
-+++ opensmtpd-extras/api/smtpd-defines.h
+--- opensmtpd-extras-6.6.0pre.orig/api/smtpd-defines.h
++++ opensmtpd-extras-6.6.0pre/api/smtpd-defines.h
 @@ -62,7 +62,9 @@ enum smtp_proc_type {
  #define SMTPD_MAXDOMAINPARTSIZE	 (255 + 1)
  
